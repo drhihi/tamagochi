@@ -2,19 +2,19 @@ module View
 
   def self.type(types)
     self.clear_screen
-    types.each_with_index { |el, i| puts "#{i+1}. #{el}" }
+    types.each.with_index { |el, i| puts "#{i+1}. #{el}" }
     puts "enter entity type: "
     gets.to_i - 1
   end
 
   def self.action(actions)
-    actions.each_with_index { |el, i| puts "#{i+1}. #{el}" }
+    actions.each.with_index { |el, i| puts "#{i+1}. #{el}" }
     puts "enter action: "
     gets.to_i - 1
   end
 
   def self.food(foods)
-    foods.each_with_index { |el, i| puts "#{i+1}. #{ el[:name] }" }
+    foods.each.with_index { |el, i| puts "#{i+1}. #{ el[:name] }" }
     puts "enter food: "
     gets.to_i - 1
   end

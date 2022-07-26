@@ -18,14 +18,11 @@ class App
     @entity = type.new nick_name
     View.say @entity
 
-    thread = Thread.new { action }
-    thread.run
+    Thread.new { action }
+          .run
 
-    until @entity.death?
+    @entity.thread_wait.join
 
-    end
-
-    thread.kill
     View.game_over @entity
 
   end

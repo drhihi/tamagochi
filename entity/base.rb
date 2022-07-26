@@ -1,5 +1,5 @@
 class Base
-  attr_reader :nick_name, :voice, :level_hungry
+  attr_reader :nick_name, :voice, :level_hungry, :thread_wait
   LEVEL_HUNGRY = 10
   TIME_WAIT = 3
 
@@ -7,7 +7,7 @@ class Base
     @nick_name = nick_name
     @level_hungry = 3
 
-    Thread.new { wait }
+    @thread_wait = Thread.new { wait }
           .run
   end
 
